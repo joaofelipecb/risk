@@ -7,18 +7,20 @@
 	</head>
 	<body>
 		<article>
-			<hgroup>
-				<h1>Account Receivable</h1>
-			</hgroup>
-{% if receivables %}
-			<ul>
-{% for receivable in receivables %}
-				<li>{{ receivable.value }}</li>
-{% endfor %}
-			</ul>
-{% else %}
-			<p>No receivable accounts</p>
-{% endif %}
+			<section>
+				<hgroup>
+					<h1>Account Receivable</h1>
+				</hgroup>
+	{% if receivables %}
+				<ul>
+	{% for receivable in receivables %}
+					<li>{{ receivable.value }} &mdash; {{ receivable.probability }}</li>
+	{% endfor %}
+				</ul>
+	{% else %}
+				<p>No receivable accounts</p>
+	{% endif %}
+			</section>
 		</article>
 	</body>
 </html>
