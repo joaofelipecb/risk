@@ -11,15 +11,40 @@
 				<hgroup>
 					<h1>Account Receivable</h1>
 				</hgroup>
-	{% if receivables %}
+{% if receivables %}
 				<ul>
-	{% for receivable in receivables %}
+{% for receivable in receivables %}
 					<li>{{ receivable.value }} &mdash; {{ receivable.probability }}</li>
-	{% endfor %}
+{% endfor %}
 				</ul>
-	{% else %}
+{% else %}
 				<p>No receivable accounts</p>
-	{% endif %}
+{% endif %}
+			</section>
+			<section>
+				<hgroup>
+					<h1>Probabilities</h1>
+				</hgroup>
+{% if probabilities %}
+				<table>
+					<thead>
+						<tr>
+							<th>Value</th>
+							<th>Probability</th>
+						</tr>
+					</thead>
+					<tbody>
+{% for probability in probabilities %}
+						<tr>
+							<td>{{ probability.value }}</td>
+							<td>{{ probability.probability </td>
+						</tr>
+{% endfor %}
+					</tbody>
+				</table>
+{% else %}
+				<p>No probabilities</p>
+{% endif %}
 			</section>
 		</article>
 	</body>
