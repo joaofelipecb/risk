@@ -11,3 +11,11 @@ class ProbabilityTest(TestCase):
         values = list(map(lambda x: x.value, p.combinations))
         self.assertEquals(values,[0,1000,1200,2200])
         
+    def test_multiplicity(self):
+        a1 = AccountReceivable(value=1000,probability=0.80)
+        a2 = AccountReceivable(value=1200,probability=0.65)
+        p = riskApp.p26struct.ProbabilityMultiplicity.ProbabilityMultiplicity([a1,a2])
+        p.calculate()
+        values = list(map(lambda x: x.probability, p.combinations))
+        self.assertEquals(values,[1,0.93,0.65,0.52])
+        
