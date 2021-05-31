@@ -16,6 +16,14 @@ class ProbabilityTest(TestCase):
         a2 = AccountReceivable(value=1200,probability=0.65)
         p = riskApp.p26struct.ProbabilityMultiplicity.ProbabilityMultiplicity([a1,a2])
         p.calculate()
-        values = list(map(lambda x: x.probability, p.combinations))
-        self.assertEquals(values,[1,0.93,0.65,0.52])
+        values = list(map(lambda x: round(x.probability,7), p.combinations))
+        self.assertEquals(values,[0.07,0.28,0.13,0.52])
         
+#    def test_multiplicity_accumulated(self):
+#        a1 = AccountReceivable(value=1000,probability=0.80)
+#        a2 = AccountReceivable(value=1200,probability=0.65)
+#        p = riskApp.p26struct.ProbabilityMultiplicity.ProbabilityMultiplicity([a1,a2])
+#        p.calculate()
+#        values = list(map(lambda x: x.probability, p.combinations))
+#        self.assertEquals(values,[1,0.93,0.65,0.52])
+#        

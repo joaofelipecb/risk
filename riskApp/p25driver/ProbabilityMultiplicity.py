@@ -46,3 +46,19 @@ class Combination:
         import riskApp.p24command.ProbabilityMultiplicity
         riskApp.p24command.ProbabilityMultiplicity.combination_sum_account_value(self, account)
 
+    def calculate_probability(self):
+        import riskApp.p23control.ProbabilityMultiplicity
+        riskApp.p23control.ProbabilityMultiplicity.combination_calculate_probability(self)
+
+    def is_account_in_combination(self, account):
+        import riskApp.p24command.ProbabilityMultiplicity
+        return riskApp.p24command.ProbabilityMultiplicity.combination_is_account_in_combination(self, account)
+
+    def multiply_account_probability(self, account):
+        import riskApp.p24command.ProbabilityMultiplicity
+        riskApp.p24command.ProbabilityMultiplicity.combination_multiply_account_probability(self, account)
+
+    def multiply_account_opposite_probability(self, account):
+        import riskApp.p24command.ProbabilityMultiplicity
+        riskApp.p24command.ProbabilityMultiplicity.combination_multiply_account_opposite_probability(self, account)
+

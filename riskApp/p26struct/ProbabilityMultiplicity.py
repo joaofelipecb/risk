@@ -49,13 +49,23 @@ class CalculateCombinations(riskApp.p25driver.ProbabilityMultiplicity.CalculateC
         self.__combinationsTuplesWithCertainLength = combinations
 
 class Combination(riskApp.p25driver.ProbabilityMultiplicity.Combination):
-    def __init__(self, accounts):
+    def __init__(self, multiplicity, accounts):
         self.__accounts = accounts
+        self.__multiplicity = multiplicity
+        self.__probability = 1
         self.__value = 0
 
     @property
     def accounts(self):
         return self.__accounts
+
+    @property
+    def multiplicity(self):
+        return self.__multiplicity
+
+    @property
+    def probability(self):
+        return self.__probability
 
     @property
     def value(self):
@@ -64,4 +74,8 @@ class Combination(riskApp.p25driver.ProbabilityMultiplicity.Combination):
     @value.setter
     def value(self, value):
         self.__value = value
+
+    @probability.setter
+    def probability(self, probability):
+        self.__probability = probability
 
