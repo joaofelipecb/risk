@@ -53,6 +53,7 @@ class Combination(riskApp.p25driver.ProbabilityMultiplicity.Combination):
         self.__accounts = accounts
         self.__multiplicity = multiplicity
         self.__probability = 1
+        self.__probabilityAccumulated = 1
         self.__value = 0
 
     @property
@@ -68,14 +69,40 @@ class Combination(riskApp.p25driver.ProbabilityMultiplicity.Combination):
         return self.__probability
 
     @property
+    def probabilityAccumulated(self):
+        return self.__probabilityAccumulated
+
+    @property
     def value(self):
         return self.__value
+
+    @probability.setter
+    def probability(self, probability):
+        self.__probability = probability
+
+    @probabilityAccumulated.setter
+    def probabilityAccumulated(self, probabilityAccumulated):
+        self.__probabilityAccumulated = probabilityAccumulated
 
     @value.setter
     def value(self, value):
         self.__value = value
 
-    @probability.setter
-    def probability(self, probability):
-        self.__probability = probability
+class CalculateProbabilities(riskApp.p25driver.ProbabilityMultiplicity.CalculateProbabilities):
+    def __init__(self, multiplicity):
+        self.__lastProbability = 0
+        self.__multiplicity = multiplicity
+
+    @property
+    def lastProbability(self):
+        return self.__lastProbability
+
+    @property
+    def multiplicity(self):
+        return self.__multiplicity
+
+    @lastProbability.setter
+    def lastProbability(self, lastProbability):
+        self.__lastProbability = lastProbability
+
 
