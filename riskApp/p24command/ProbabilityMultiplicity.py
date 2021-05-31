@@ -4,7 +4,7 @@ def create_and_append_combination(multiplicity, combinationTuple):
     multiplicity.combinations.append(combination)
 
 def sort_by_value_asc(multiplicity):
-    multiplicity.combinations = sorted(multiplicity.combinations, key = lambda x: x.value)
+    multiplicity.combinations = sorted(multiplicity.combinations, key = lambda x: x.value, reverse = True)
 
 def generate_combinations_tuples_init(calculate):
     accounts = calculate.multiplicity.accounts

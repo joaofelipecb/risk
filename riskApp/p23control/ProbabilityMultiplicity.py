@@ -32,7 +32,7 @@ def combination_calculate_value(combination):
 
 def calculate_probabilities(multiplicity):
     calculate = riskApp.p26struct.ProbabilityMultiplicity.CalculateProbabilities(multiplicity)
-    for combination in reversed(multiplicity.combinations):
+    for combination in multiplicity.combinations:
         combination.calculate_probability(calculate)
         calculate.update_lastProbability(combination)
 

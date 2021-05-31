@@ -25,7 +25,7 @@
 				<hgroup>
 					<h1>Probabilities</h1>
 				</hgroup>
-{% if probabilities %}
+{% if probability %}
 				<table>
 					<thead>
 						<tr>
@@ -34,10 +34,10 @@
 						</tr>
 					</thead>
 					<tbody>
-{% for probability in probabilities %}
+{% for combination in probability.combinations %}
 						<tr>
-							<td>{{ probability.value }}</td>
-							<td>{{ probability.probability </td>
+							<td>{{ combination.value }}</td>
+							<td>{{ combination.probabilityAccumulated }} </td>
 						</tr>
 {% endfor %}
 					</tbody>
